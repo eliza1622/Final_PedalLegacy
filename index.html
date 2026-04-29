@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Pedal Legacy - Cebu Cycling Races</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+<body>
+<div class="bg-animation" id="bg-animation">
+    <div class="bg-slide active" style="background-image: url('https://i.pinimg.com/1200x/8d/95/5a/8d955aadac6878af4ac7e1d611642cd9.jpg');"></div>
+    <div class="bg-slide" style="background-image: url('https://i.pinimg.com/1200x/ca/ea/5b/caea5befd39fde95c8db8d6e99fc3e83.jpg');"></div>
+    <div class="bg-slide" style="background-image: url('https://i.pinimg.com/1200x/e7/4e/c7/e74ec796ca08ab72cc946f4eb0f6b999.jpg');"></div>
+    <div class="bg-slide" style="background-image: url('https://i.pinimg.com/1200x/95/57/f8/9557f87089781676bdabf96f870275da.jpg');"></div>
+    <div class="bg-slide" style="background-image: url('https://i.pinimg.com/1200x/74/13/47/741347993f88cee2af45b59e9fa4ab44.jpg');"></div>
+    <div class="bg-slide" style="background-image: url('https://i.pinimg.com/1200x/18/75/09/1875093821dd5c79137c451fa5c1e35b.jpg');"></div>
+</div>
+<div id="main-website">
+    <div class="content-wrapper">
+        <header>
+            <div class="header-content">
+                <a href="#" class="logo" style="text-decoration: none;">Pedal Legacy</a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="#aboutus" class="nav-link">About Us</a></li>
+                    <li class="nav-item"><a href="#trailmap" class="nav-link">Trail Map</a></li>
+                    <li class="nav-item races-nav"><a href="#races" class="nav-link">Races</a></li>
+                    <li class="nav-item"><a href="#guidelines" class="nav-link">Guidelines</a></li>
+                </ul>
+                <div class="icons">
+                    <div class="user-area">
+                        <span class="user-name-click" id="user-name-click"><span id="user-name-display">User</span> <i class="fas fa-chevron-down"></i></span>
+                        <div class="note-logo" id="note-icon" style="display: none;">
+                            <div class="note-icon-receipt"><div class="note-lines"><span></span><span></span><span></span><span></span></div></div>
+                        </div>
+                    </div>
+                    <div class="user-dropdown" id="user-dropdown"></div>
+                </div>
+            </div>
+        </header>
+        
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="hero-content"><h1>Cebu Cycling Races</h1><div class="quote-section"><p>"Experience the thrill of competitive cycling in the beautiful landscapes of Cebu."</p></div><div class="hero-buttons"><a href="#trailmap" class="btn view-trails-btn">View Trail</a></div></div>
+                <div class="moving-text-container"><div class="moving-text">Join the Cebu Cycling Race 2026-2027 - Register Now!</div></div>
+            </div>
+            <div class="our-history-title"><h2>Our History</h2></div>
+            <div class="home-history-section">
+                <div class="home-history-image"><img src="https://i.pinimg.com/736x/62/40/f6/6240f6046744f4a888de4096d25f5f36.jpg" alt="Cebu Cycling Legacy"></div>
+                <div class="home-history-content"><p>The history of the Pedal Legacy system is deeply rooted in the long evolution of cycling, which began with the invention of the first steerable two-wheeler in 1817. Just as the original "Laufmaschine" was created to provide a new way to navigate the world, this digital platform was established to help the Cebuano cycling community navigate the modern race landscape.</p><p>While the bicycle evolved through the 19th century from the "Boneshaker" of 1863 to the first "Safety Bicycle" in 1885. Pedal Legacy represents the next step in that journey by integrating technology with tradition.</p><p>The system serves as a centralized hub for race management, bridging the gap between event organizers and athletes who previously lacked a unified registration tool. By simplifying complex logistics and offering a seamless digital workflow, the platform honors the spirit of innovation that has defined cycling for over two centuries.</p></div>
+            </div>
+            <div class="races-section-heading"><h2>Races in Cebu</h2><p>CEMENT YOUR LEGACY ON CEBU'S FINEST TRAILS</p></div>
+            <div class="home-race-grid" id="home-race-grid"></div>
+            <div class="loggedin-story-section" id="story-section">
+                <div class="story-left"><h3></h3><p>A key milestone in its development was the implementation of a secure user authentication system, allowing participants to track their personal registration history alongside modern features like interactive trail maps. The mission behind the system is driven by local enthusiasts who understand the unique challenges of the Cebu cycling scene, from mountain trails to coastal roads.</p><p>Ultimately, Pedal Legacy stands as a digital testament to an enduring passion that started with a wooden frame in 1817 and continues to thrive in the heart of the Philippines today.</p><div class="signature"></div></div>
+                <div class="story-right"><img src="https://i.pinimg.com/1200x/12/8e/f2/128ef2afe3f462a4af555550d5df9da4.jpg" alt="Cycling community in Cebu"></div>
+            </div>
+        </section>
+        
+        <section id="aboutus" class="section" style="padding: 0 !important; margin: 0 !important;">
+            <div class="aboutus-section">
+                <div class="aboutus-carousel" id="aboutus-carousel">
+                    <div class="carousel-slide active" style="background-image: url('https://i.pinimg.com/1200x/21/90/30/219030059ef5a580930e87751ac3d738.jpg');"></div>
+                    <div class="carousel-slide" style="background-image: url('https://i.pinimg.com/1200x/16/f5/ec/16f5ecd574b6a2b26fa5ede228f26b37.jpg');"></div>
+                    <div class="carousel-slide" style="background-image: url('https://i.pinimg.com/1200x/6e/a2/6f/6ea26fcee6e5ce80b1a809bd6dfe3ba4.jpg');"></div>
+                    <div class="carousel-slide" style="background-image: url('https://i.pinimg.com/1200x/45/80/6b/45806b9ae72cc6acfc43fbd8570967c1.jpg');"></div>
+                    <div class="carousel-slide" style="background-image: url('https://i.pinimg.com/1200x/75/23/45/752345f74913bc96e87b2c2d3ce7950a.jpg');"></div>
+                    <div class="carousel-slide" style="background-image: url('https://i.pinimg.com/1200x/4f/ae/a2/4faea2cf5e85de3abb44c1b3157f693b.jpg');"></div>
+                    <div class="carousel-overlay"></div>  
+                </div>
+                <div class="carousel-arrow carousel-arrow-left" id="carouselArrowLeft"><i class="fas fa-chevron-left"></i></div>
+                <div class="carousel-arrow carousel-arrow-right" id="carouselArrowRight"><i class="fas fa-chevron-right"></i></div>
+                <div id="aboutus-text" class="aboutus-text-center"></div>
+            </div>
+        </section>
+        
+        <section id="trailmap" class="section"><div class="container"><div class="trailmap-section"><div class="map-container"><div id="trail-map"></div></div></div></div></section>
+        
+        <section id="races" class="section">
+            <div class="container">
+                <div class="races-page-header">
+                    <h2>Races in Cebu</h2>
+                    <p>CEMENT YOUR LEGACY ON CEBU'S FINEST TRAILS</p>
+                </div>
+                <div class="race-cards-container" id="race-cards-container"></div>
+            </div>
+        </section>
+        
+        <section id="guidelines" class="section">
+            <div class="guidelines-section-wrapper">
+                <div class="guidelines-grid" id="guidelines-container"></div>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <div class="footer-line"></div>
+            <div class="footer-copyright">© 2012 Pedal Legacy | Cebu Cycling</div>
+        </div>
+    </footer>
+</div>
+
+<!-- MODALS -->
+<div id="prize-info-modal" class="modal prize-modal"><div class="modal-content"><span class="close-modal" onclick="closePrizeModal()">&times;</span><h2>Race Perks</h2><div class="prize-item-compact"><span class="prize-title-compact">Registration Fee</span><span class="prize-value-compact" id="prize-fee-display">₱0</span></div><div class="prize-item-compact"><span class="prize-title-compact">Finisher Medal</span><span class="prize-value-compact included"><i class="fas fa-check-circle"></i> Included</span></div><div class="prize-item-compact"><span class="prize-title-compact">Cash Prize</span><span class="prize-value-compact" id="prize-pool-display">₱0</span></div><button class="continue-btn-simple" id="continue-to-reg-btn">Proceed to Payment →</button></div></div>
+<div id="payment-modal" class="modal payment-modal"><div class="modal-content"><h2>Select a Payment Method</h2><p style="color:#ddd; font-size:14px; margin-bottom:18px;">Choose your payment method and fill in the details.</p><div class="prize-item-compact"><span class="prize-title-compact">Amount Due</span><span class="prize-value-compact" id="payment-amount-display">₱0</span></div><div class="payment-options">
+<label><input type="radio" name="payment-method" value="Credit Card" checked onchange="showPaymentForm('Credit Card')">Credit Card</label>
+<label><input type="radio" name="payment-method" value="GCash" onchange="showPaymentForm('GCash')">GCash</label>
+<label><input type="radio" name="payment-method" value="PayPal" onchange="showPaymentForm('PayPal')">PayPal</label>
+</div>
+<div id="payment-form-area">
+<!-- Credit Card Form -->
+<div id="form-Credit Card" class="payment-detail-form">
+<div class="form-group"><input type="text" id="cc-name" placeholder="Cardholder Name *" maxlength="60"></div>
+<div class="form-group"><input type="text" id="cc-number" placeholder="Card Number * (16 digits)" maxlength="19"></div>
+<div class="payment-row">
+<div class="form-group"><input type="text" id="cc-expiry" placeholder="MM/YY *" maxlength="5"></div>
+<div class="form-group"><input type="text" id="cc-cvv" placeholder="CVV *" maxlength="3"></div>
+</div></div>
+<!-- GCash Form -->
+<div id="form-GCash" class="payment-detail-form" style="display:none">
+<div class="form-group"><input type="text" id="gcash-name" placeholder="Account Name *" maxlength="60"></div>
+<div class="form-group"><input type="tel" id="gcash-number" placeholder="GCash Number * (09XXXXXXXXX)" maxlength="11"></div>
+</div>
+<!-- PayPal Form -->
+<div id="form-PayPal" class="payment-detail-form" style="display:none">
+<div class="form-group"><input type="email" id="paypal-email" placeholder="PayPal Email Address *"></div>
+<div class="form-group"><input type="text" id="paypal-name" placeholder="Full Name *" maxlength="60"></div>
+</div>
+</div>
+<button class="continue-btn-simple" id="confirm-payment-btn">Confirm Payment →</button><button class="cancel-btn" onclick="closePaymentModal()">Cancel</button></div></div>
+<div id="race-reg-modal" class="modal race-reg-modal"><div class="modal-content"><button class="modal-back-btn" id="race-reg-back-btn"><i class="fas fa-arrow-left"></i></button><h2>Race Registration</h2><div class="modal-subtitle" id="race-name-display"></div><form id="race-register-form"><div class="form-row"><div class="form-group"><input type="text" id="race-firstname" placeholder="First Name *"></div><div class="form-group"><input type="text" id="race-lastname" placeholder="Last Name *"></div></div><div class="form-row"><div class="form-group"><input type="number" id="race-age" placeholder="Age * (13-90)" min="13" max="90" step="1" inputmode="numeric"><div class="field-error" id="race-age-error"></div></div><div class="form-group"><select id="race-gender"><option value="" disabled selected>Gender *</option><option>Male</option><option>Female</option></select></div></div><div class="form-row"><div class="form-group"><input type="tel" id="race-phone" placeholder="Contact Number *"></div><div class="form-group"><input type="text" id="race-address" placeholder="Street Address *"></div></div><div class="form-group"><input type="email" id="race-email" placeholder="Email Address *"></div><div class="form-row"><div class="form-group"><input type="text" class="province-field" value="Cebu" readonly></div><div class="form-group"><select id="race-city"><option value="" disabled selected>City / Municipality *</option></select></div></div><div class="emergency-badge"><i class="fas fa-phone-alt"></i> <strong>Emergency Contact</strong><div class="form-row" style="margin-top: 10px;"><div class="form-group"><input type="text" id="race-emergency-name" placeholder="Emergency Contact Name *"></div><div class="form-group"><input type="tel" id="race-emergency-number" placeholder="Emergency Contact Number *"></div></div></div><div class="form-group"><select id="race-bike-category"><option value="" disabled selected>Bike Category *</option><option>Mountain Bike</option><option>Gravel Bike</option></select></div><div class="form-group"><textarea id="race-medical-conditions" placeholder="Medical Conditions / Allergies (if any)" rows="2"></textarea></div><button type="submit" class="continue-btn">Complete Registration</button></form></div></div>
+<div id="login-modal" class="modal login-modal-simple"><div class="modal-content"><span class="close-modal" onclick="closeLoginModal()">&times;</span><h2>Pedal Legacy</h2><form id="login-form-popup"><div class="form-group"><input type="email" id="login-email-popup" placeholder="Email Address"></div><div class="form-group"><input type="password" id="login-password-popup" placeholder="Password"></div><div class="checkbox-group"><label><input type="checkbox" id="remember-me"> Remember Me</label></div><button type="submit" class="login-btn-submit">LOG IN</button><div class="auth-toggle">No account? <span onclick="switchToRegisterFromLogin()">Create Account</span></div></form></div></div>
+<div id="register-modal" class="modal register-modal"><div class="modal-content"><span class="close-modal" onclick="closeRegisterModal()">&times;</span><h2>Join Pedal Legacy</h2><form id="register-form"><div class="form-row"><div class="form-group"><input type="text" id="reg-firstname" placeholder="First Name *"></div><div class="form-group"><input type="text" id="reg-lastname" placeholder="Last Name *"></div></div><div class="form-row"><div class="form-group"><input type="number" id="reg-age" placeholder="Age * (13-90)" min="13" max="90" step="1" inputmode="numeric"><div class="field-error" id="reg-age-error"></div></div><div class="form-group"><select id="reg-gender"><option value="" disabled selected>Gender *</option><option>Male</option><option>Female</option></select></div></div><div class="form-row"><div class="form-group"><input type="tel" id="reg-phone" placeholder="Contact Number *"></div><div class="form-group"><input type="text" id="reg-address" placeholder="Street Address *"></div></div><div class="form-group"><input type="email" id="reg-email" placeholder="Email Address *"></div><div class="form-row"><div class="form-group"><input type="text" class="province-field" value="Cebu" readonly></div><div class="form-group"><select id="reg-city"><option value="" disabled selected>City / Municipality *</option></select></div></div><div class="form-row"><div class="form-group"><input type="password" id="reg-password" placeholder="Password * (min 8 chars)"></div><div class="form-group"><input type="password" id="reg-confirm-password" placeholder="Confirm Password *"></div></div><button type="submit" class="login-btn-submit">Create Account</button><div class="auth-toggle">Already have an account? <span onclick="switchToLoginFromRegister()">Log In</span></div></form></div></div>
+<!-- REGISTRATION SUCCESS MODAL -->
+<div id="reg-success-modal" class="modal reg-success-modal">
+    <div class="modal-content">
+        <div class="reg-success-icon"><i class="fas fa-check-circle"></i></div>
+        <h2>You're Registered!</h2>
+        <p class="reg-success-subtitle" id="reg-success-race-name"></p>
+        <div class="reg-success-grid" id="reg-success-grid"></div>
+        <button class="continue-btn" onclick="closeRegSuccessModal()">Done</button>
+    </div>
+</div>
+
+<div id="records-modal" class="modal records-modal"><div class="modal-content"><button class="records-close-x" onclick="closeRecordsModal()"><i class="fas fa-times"></i></button><h2>My Race Registrations</h2><div id="records-list" class="records-list"><div class="no-records">No race registrations yet.</div></div></div></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
