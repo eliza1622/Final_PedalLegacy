@@ -110,13 +110,13 @@
 <!-- MODALS -->
 <div id="prize-info-modal" class="modal prize-modal"><div class="modal-content"><span class="close-modal" onclick="closePrizeModal()">&times;</span><h2>Race Perks</h2><div class="prize-item-compact"><span class="prize-title-compact">Registration Fee</span><span class="prize-value-compact" id="prize-fee-display">₱0</span></div><div class="prize-item-compact"><span class="prize-title-compact">Finisher Medal</span><span class="prize-value-compact included"><i class="fas fa-check-circle"></i> Included</span></div><div class="prize-item-compact"><span class="prize-title-compact">Cash Prize</span><span class="prize-value-compact" id="prize-pool-display">₱0</span></div><button class="continue-btn-simple" id="continue-to-reg-btn">Proceed to Payment →</button></div></div>
 <div id="payment-modal" class="modal payment-modal"><div class="modal-content"><h2>Select a Payment Method</h2><p style="color:#ddd; font-size:14px; margin-bottom:18px;">Choose your payment method and fill in the details.</p><div class="prize-item-compact"><span class="prize-title-compact">Amount Due</span><span class="prize-value-compact" id="payment-amount-display">₱0</span></div><div class="payment-options">
-<label><input type="radio" name="payment-method" value="Credit Card" checked onchange="showPaymentForm('Credit Card')">Credit Card</label>
+<label><input type="radio" name="payment-method" value="Credit-Card" checked onchange="showPaymentForm('Credit-Card')">Credit Card</label>
 <label><input type="radio" name="payment-method" value="GCash" onchange="showPaymentForm('GCash')">GCash</label>
 <label><input type="radio" name="payment-method" value="PayPal" onchange="showPaymentForm('PayPal')">PayPal</label>
 </div>
 <div id="payment-form-area">
 <!-- Credit Card Form -->
-<div id="form-Credit Card" class="payment-detail-form">
+<div id="form-Credit-Card" class="payment-detail-form">
 <div class="form-group"><input type="text" id="cc-name" placeholder="Cardholder Name *" maxlength="60"></div>
 <div class="form-group"><input type="text" id="cc-number" placeholder="Card Number * (16 digits)" maxlength="19"></div>
 <div class="payment-row">

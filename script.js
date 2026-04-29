@@ -32,7 +32,7 @@
     ];
     
     const cebuLocations = {"Cebu City":[10.3157,123.8854],"Mandaue City":[10.33,123.937],"Lapu-Lapu City":[10.3092,123.9491],"Talisay City":[10.2518,123.8468],"Danao City":[10.5208,123.9819],"Toledo City":[10.3775,123.6425],"Naga City":[10.2094,123.7572],"Consolacion":[10.3808,123.9575],"Liloan":[10.413,123.9746],"Minglanilla":[10.2406,123.7975],"San Fernando":[10.1622,123.7082],"Carcar":[10.1061,123.6407],"Dalaguete":[9.76,123.5349],"Moalboal":[9.947,123.3985],"Bantayan":[11.1685,123.7225],"Balamban":[10.5033,123.7156],"Argao":[9.8797,123.5959],"Oslob":[9.5537,123.4327],"Barili":[10.1172,123.5122],"Santander":[9.4193,123.3351],"Samboan":[9.5275,123.3081],"Catmon":[10.6725,123.96],"Sogod":[10.7508,124],"Cordova":[10.2442,123.9431],"San Remigio":[11.0098,123.9392],"Santa Fe":[11.1672,123.8064],"Pinamungajan":[10.253,123.5861],"Alcoy":[9.6998,123.5053]};
-    let mapInitialized = false, currentUser = null, userRegistrations = [], pendingRace = null, paymentConfirmed = false, selectedPaymentMethod = 'Credit Card';
+    let mapInitialized = false, currentUser = null, userRegistrations = [], pendingRace = null, paymentConfirmed = false, selectedPaymentMethod = 'Credit-Card';
     
     function initCebuMap() { if(mapInitialized) return; const map = L.map('trail-map',{minZoom:9,maxZoom:14}).setView([10.3157,123.8854],10); L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{attribution:'&copy; Esri',maxZoom:18}).addTo(map); Object.entries(cebuLocations).forEach(([n,c])=>L.marker(c,{icon:L.divIcon({className:'crisp-label',html:n,iconSize:[null,null]}),interactive:false}).addTo(map)); mapInitialized=true; }
     
@@ -138,8 +138,8 @@
     function closeRegisterModal(){ document.getElementById('register-modal').classList.remove('active'); }
     function switchToLoginFromRegister(){ closeRegisterModal(); openLoginModal(); }
     function switchToRegisterFromLogin(){ closeLoginModal(); openRegisterModal(); }
-    function openRaceRegistration(race){ pendingRace=race; if(!currentUser){ openLoginModal(); return; } document.getElementById('prize-fee-display').innerHTML=formatPrice(race.price); document.getElementById('prize-pool-display').innerHTML=formatPrice(race.prizePool); document.getElementById('prize-info-modal').classList.add('active'); paymentConfirmed = false; selectedPaymentMethod = 'Credit Card'; }
-    function proceedToRegistrationForm(){ if(!pendingRace) return; document.getElementById('payment-amount-display').innerHTML=formatPrice(pendingRace.price); document.getElementById('payment-modal').classList.add('active'); closePrizeModal(); paymentConfirmed = false; selectedPaymentMethod = 'Credit Card'; const defaultMethod = document.querySelector('input[name="payment-method"][value="Credit Card"]'); if(defaultMethod) defaultMethod.checked = true; showPaymentForm('Credit Card'); document.querySelectorAll('.payment-detail-form input').forEach(i => i.value = ''); }
+    function openRaceRegistration(race){ pendingRace=race; if(!currentUser){ openLoginModal(); return; } document.getElementById('prize-fee-display').innerHTML=formatPrice(race.price); document.getElementById('prize-pool-display').innerHTML=formatPrice(race.prizePool); document.getElementById('prize-info-modal').classList.add('active'); paymentConfirmed = false; selectedPaymentMethod = 'Credit-Card'; }
+    function proceedToRegistrationForm(){ if(!pendingRace) return; document.getElementById('payment-amount-display').innerHTML=formatPrice(pendingRace.price); document.getElementById('payment-modal').classList.add('active'); closePrizeModal(); paymentConfirmed = false; selectedPaymentMethod = 'Credit-Card'; const defaultMethod = document.querySelector('input[name="payment-method"][value="Credit-Card"]'); if(defaultMethod) defaultMethod.checked = true; showPaymentForm('Credit-Card'); document.querySelectorAll('.payment-detail-form input').forEach(i => i.value = ''); }
     function showPaymentForm(method){
         document.querySelectorAll('.payment-detail-form').forEach(f => f.style.display = 'none');
         const target = document.getElementById('form-' + method);
@@ -149,9 +149,9 @@
     function proceedToRaceRegistration(){
         if(!pendingRace) return;
         const selected = document.querySelector('input[name="payment-method"]:checked');
-        selectedPaymentMethod = selected ? selected.value : 'Credit Card';
+        selectedPaymentMethod = selected ? selected.value : 'Credit-Card';
         // Validate payment fields
-        if(selectedPaymentMethod === 'Credit Card'){
+        if(selectedPaymentMethod === 'Credit-Card'){
             const name = document.getElementById('cc-name').value.trim();
             const num = document.getElementById('cc-number').value.trim();
             const exp = document.getElementById('cc-expiry').value.trim();
