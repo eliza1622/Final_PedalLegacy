@@ -31,7 +31,7 @@ $stmt = $conn->prepare('INSERT INTO registrations
     VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
 
 $stmt->bind_param(
-    'iissssiiissssisssssssss',
+    'iissssiiissssssssssssss',
     $userId,
     $data['raceId'],
     $data['raceName'],
@@ -58,7 +58,7 @@ $stmt->bind_param(
 );
 
 if ($stmt->execute()) {
-    echo json_encode(['success' => true, 'message' => 'Registration saved.']);
+    echo json_encode(['success' => true, 'message' => 'Registration saved.', 'registration_id' => $stmt->insert_id]);
 } else {
     echo json_encode(['success' => false, 'message' => 'Failed to save registration.']);
 }

@@ -46,3 +46,26 @@ CREATE TABLE IF NOT EXISTS registrations (
     registered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
+
+CREATE TABLE IF NOT EXISTS payments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    registration_id INT NOT NULL,
+    user_id INT NOT NULL,
+    payment_method ENUM('Credit Card','GCash','PayPal') NOT NULL,
+    payment_status ENUM('paid','unpaid') DEFAULT 'unpaid',
+    amount SMALLINT UNSIGNED NOT NULL DEFAULT 0,
+    -- Credit Card fields
+    cc_cardholder_name VARCHAR(100),
+    cc_number_masked VARCHAR(20),
+    cc_expiry VARCHAR(5),
+    -- GCash fields
+    gcash_name VARCHAR(100),
+    gcash_number VARCHAR(11),
+    -- PayPal fields
+    paypal_email VARCHAR(150),
+    paypal_name VARCHAR(100),
+    payment_datetime DATETIME,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (registration_id) REFERENCES registrations(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);

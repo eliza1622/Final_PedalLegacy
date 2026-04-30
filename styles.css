@@ -368,12 +368,12 @@
         .prize-modal .close-modal { position: absolute; right: 14px; top: 12px; font-size: 20px; cursor: pointer; color: #aaa; background: transparent; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
         .prize-modal .close-modal:hover { color: #e74c3c; background: rgba(231,76,60,0.1); }
         
-        .reg-success-modal .modal-content { background: #1a1a1a; border-radius: 28px; max-width: 480px; width: 90%; padding: 36px 28px 28px; position: relative; color: white; border: 1px solid rgba(231,76,60,0.5); text-align: center; box-shadow: 0 24px 60px rgba(0,0,0,0.8); }
+        .reg-success-modal .modal-content { background: rgba(0,0,0,0.35); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: 28px; max-width: 480px; width: 90%; padding: 36px 28px 28px; position: relative; color: white; border: 1px solid rgba(231,76,60,0.5); text-align: center; box-shadow: 0 24px 60px rgba(0,0,0,0.4); }
         .reg-success-icon { font-size: 56px; color: #e74c3c; margin-bottom: 14px; display: block; animation: popIn 0.4s cubic-bezier(0.175,0.885,0.32,1.275); }
         @keyframes popIn { 0% { transform: scale(0); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
         .reg-success-modal h2 { font-size: 24px; font-weight: 800; background: linear-gradient(135deg, #e74c3c, #ff8c00); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 4px; }
         .reg-success-subtitle { color: #aaaaaa; font-size: 13px; font-weight: 500; margin-bottom: 20px; letter-spacing: 0.3px; }
-        .reg-success-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; text-align: left; background: #111111; border-radius: 16px; padding: 18px; margin-bottom: 22px; border: 1px solid rgba(231,76,60,0.2); }
+        .reg-success-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; text-align: left; background: rgba(0,0,0,0.25); border-radius: 16px; padding: 18px; margin-bottom: 22px; border: 1px solid rgba(231,76,60,0.2); }
         .reg-success-field { display: flex; flex-direction: column; gap: 3px; }
         .reg-success-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: #e74c3c; }
         .reg-success-value { font-size: 13px; font-weight: 600; color: #eeeeee; word-break: break-word; }
